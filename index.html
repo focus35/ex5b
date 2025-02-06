@@ -52,7 +52,8 @@
 			   }
 			   		return true;
 			   }    
-			   var t1;
+			   function tempCal(t1,u1){
+				var t1;
 			   var u1;
 			   
 			   if(u == "F"){
@@ -60,15 +61,20 @@
 					u1 = "Fahrenheit";
 			   }else if(u == "K"){
 					t1 =  t + 273.15;
-					u1 = "Réaumur";
+					u1 = "Kelvin";
 			   }else if(u == "R"){
 					t1 = t * (4/5);
-					u1 = "Kelvin";
+					u1 = "Réaumur";
 			   }
+			   return[t1,u1];
+			   }
+			  
 			   
 			   if(!tempValidate(t)){
 				return;
 			   }
+
+			   [t1,u1] = tempCal(t,u);
 
 			   alert("Temperature is "+t1+" in "+u1);
 			});
